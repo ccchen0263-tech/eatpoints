@@ -3,8 +3,8 @@ import { createClient } from '@supabase/supabase-js';
 import { User, Store, CreditCard, History, Search, CheckCircle, Loader2 } from 'lucide-react';
 
 // --- 連線設定：這是你的保險箱鑰匙 ---
-const SUPABASE_URL = 'https://lijnwvpwdmzyckwvivjg.supabase.co';
-const SUPABASE_KEY = process.env.REACT_APP_SUPABASE_ANON_KEY || '[請在.env設定你的ANON KEY]';
+const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL || 'https://lijnwvpwdmzyckwvivjg.supabase.co';
+const SUPABASE_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY || '[請在 Vercel 設定你的 ANON KEY]';
 const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
 
 export default function EatPointsApp() {
